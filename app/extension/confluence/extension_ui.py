@@ -184,12 +184,7 @@ def view_log_page(webdriver, datasets):
     def measure():
         page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/plugins/servlet/server-classification/audit")
         # Check heading has rendered
-        __check_h3_has_rendered(page, "Scan Log")
-
-        @print_timing("selenium_compliance_view_log_page:action")
-        def sub_measure():
-            click_tab_and_check_heading(page, webdriver, " Action Log", "Action Log")
-        sub_measure()
+        __check_h3_has_rendered(page, "Action Log")
 
     measure()
 
